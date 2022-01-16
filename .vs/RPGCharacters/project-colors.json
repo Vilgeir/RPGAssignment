@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "73a1c5c0-4e31-424c-97c8-e4f7b64f6a86": {
+      "ProjectGuid": "73a1c5c0-4e31-424c-97c8-e4f7b64f6a86",
+      "DisplayName": "RPGCharacters",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

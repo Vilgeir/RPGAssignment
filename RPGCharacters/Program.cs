@@ -2,11 +2,32 @@
 
 namespace RPGCharacters
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            Mage newmage = new Mage();
+
+            newmage.Name = "Trine";
+
+            newmage.Level = 1;
+
+            newmage.SetBaseStats();
+
+            
+
+            newmage.ShowStats();
+
+            newmage.increaseLvl();
+
+            newmage.ShowStats();
+
+
+
+
         }
+
+       
     }
 }
