@@ -1,0 +1,16 @@
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\bin\Debug\net5.0\RPGCharacters.exe
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\bin\Debug\net5.0\RPGCharacters.deps.json
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\bin\Debug\net5.0\RPGCharacters.runtimeconfig.json
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\bin\Debug\net5.0\RPGCharacters.runtimeconfig.dev.json
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\bin\Debug\net5.0\RPGCharacters.dll
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\bin\Debug\net5.0\ref\RPGCharacters.dll
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\bin\Debug\net5.0\RPGCharacters.pdb
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\RPGCharacters.csproj.AssemblyReference.cache
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\RPGCharacters.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\RPGCharacters.AssemblyInfoInputs.cache
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\RPGCharacters.AssemblyInfo.cs
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\RPGCharacters.csproj.CoreCompileInputs.cache
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\RPGCharacters.dll
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\ref\RPGCharacters.dll
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\RPGCharacters.pdb
+C:\Users\VHelge\source\repos\RPGCharacters\RPGCharacters\obj\Debug\net5.0\RPGCharacters.genruntimeconfig.cache
