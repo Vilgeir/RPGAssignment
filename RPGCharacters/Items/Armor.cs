@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGCharacters.Characters
+namespace RPGCharacters
 {
-    public class Ranger : Character
+    public class Armor : Item
     {
+        public Attribute Attribute { get; set; }
     }
 }

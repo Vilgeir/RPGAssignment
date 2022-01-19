@@ -8,14 +8,11 @@ namespace RPGCharacters
 {
     public class Attribute
     {
-        public int Strength { get; set; } = 1;
-        public int Dexterity { get; set; } = 2;
-        public int Intelligence { get; set; } = 3;
+        //Character attributes
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Intelligence { get; set; }
 
 
-        //public static void ShowMageStats(Attributes stats)
-        //{
-        //    Console.WriteLine($"Strength: {stats.Strength}, Dexterity: {stats.Dexterity}, Intelligence: {stats.Intelligence}");
-        //}
     }
 }
