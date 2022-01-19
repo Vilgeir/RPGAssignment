@@ -7,7 +7,7 @@ namespace RPGCharacters
         static void Main(string[] args)
         {
 
-            Mage newmage = new Mage()
+            Mage newMage = new Mage()
             {
                 Name = "Lux",
                 Level = 1,
@@ -21,8 +21,8 @@ namespace RPGCharacters
                 {
                     ItemName = "Staff",
                     LevelToEquip = 1,
-                    ItemSlot = "staff",
-                    WeaponType = "ree",
+                    //ItemSlot = "staff",
+                    WeaponType = Weapons.WeaponTypes.Wand,
                     WeaponAttributes = new WeaponAttributes()
                     {
                         Damage = 10,
@@ -33,8 +33,8 @@ namespace RPGCharacters
                 {
                     ItemName = "Cloth",
                     LevelToEquip = 1,
-                    BodySlot = 0,
-                    ItemSlot = "Cloth",
+                    //ItemSlot = ,
+                    ArmorType = Armor.ArmorTypes.Mail,
                     Attribute = new Attribute()
                     {
                         Strength = 2,
@@ -44,17 +44,11 @@ namespace RPGCharacters
                 }
             };
 
-            newmage.ShowStats();
-            newmage.LevelUp();
-            newmage.ShowStats();
-            newmage.CalculateTotalDamage();
-            newmage.WeaponCompatibility();
-            newmage.CalculateTotalDamage();
-            newmage.LevelUp();
-            newmage.CalculateTotalDamage();
+            newMage.CharacterChecks();
+            newMage.ShowStats();
+            newMage.LevelUp();
+            newMage.ShowStats();
+
         }
-
-        
-
     }
 }

@@ -8,6 +8,16 @@ namespace RPGCharacters
 {
     public class Armor : Item
     {
+        public enum ArmorTypes
+        {
+            Cloth,
+            Leather,
+            Mail,
+            Plate
+        }
         public Attribute Attribute { get; set; }
+
+        public ArmorTypes ArmorType { get; set; }
     }
+
 }
