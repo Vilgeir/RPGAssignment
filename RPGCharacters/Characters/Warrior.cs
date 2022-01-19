@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace RPGCharacters
 {
-    public class ArmorAttributes
+    public class Warrior : Character
     {
-
+        public enum WarriorItems
+        {
+            Axe,
+            Hammer,
+            Sword
+        }
     }
 }

@@ -10,9 +10,11 @@ namespace RPGCharacters
     {
         public string Name { get; set; }
         public int Level { get; set; } = 1;
-        public Item item { get; set; }
+        public Item Item { get; set; }
         public Weapons Weapon { get; set; }
         public Armor Armor { get; set; }
+
+        
 
         // Base primary attributtes
         public Attribute Attribute { get; set; }
@@ -21,42 +23,55 @@ namespace RPGCharacters
         {
             if (GetType() == typeof(Mage))
             {
-                try
-                {
-                    Weapon.WeaponType = "AXE";
-                    Console.WriteLine(Weapon.WeaponType);
-                } catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                if ((Weapon.WeaponType != Weapons.WeaponTypes.Staff) && (Weapon.WeaponType != Weapons.WeaponTypes.Wand))
+                    throw new Exception("Invalid weapon");
             }
+        }
+
+        public void WeaponLevelCheck()
+        {
+            if (Level < Weapon.LevelToEquip)
+                throw new Exception("Weapon level too high");
+        }
+
+        public void ArmorLevelCheck()
+        {
+            if (Level < Armor.LevelToEquip)
+                throw new Exception("Weapon level too high");
         }
 
         public void LevelUp()
         {
-            if (GetType() == typeof(Mage))
+ {}            if (GetType() == typeof(Mage))
             {
                 Attribute.Strength += 1;
                 Attribute.Dexterity += 1;
                 Attribute.Intelligence += 5;
             }
-        }
+        }        
 
-        public void ShowStats()
-        {
-            Console.WriteLine($"Strength: {Attribute.Strength} Dexterity: {Attribute.Dexterity} Intelligence: {Attribute.Intelligence}");
-        }
-
-        public void CalculateTotalDamage()
+        public double CalculateTotalDamage()
         {
             double totalArmor = Armor.Attribute.Strength + Armor.Attribute.Dexterity + Armor.Attribute.Intelligence;
             double totalBase = Attribute.Strength + Attribute.Dexterity + Attribute.Intelligence;
             double totalAttributes = totalArmor + totalBase;
             double totalDamage = Weapon.WeaponAttributes.AttackSpeed * totalAttributes;
 
-            Console.WriteLine($"The Caracter has total damage of {totalDamage}");
+            return totalDamage;
         }
 
-        // Total primary attributtes
+        public void CharacterChecks()
+        {
+            WeaponCompatibility();
+            WeaponLevelCheck();
+            ArmorLevelCheck();
+        }
+        public void ShowStats()
+        {
+            Console.WriteLine($"Strength: {Attribute.Strength} Dexterity: {Attribute.Dexterity} Intelligence: {Attribute.Intelligence}");
+            Console.WriteLine($"The total damage of {Name} is {CalculateTotalDamage()}");
+        }
+
+
     }
 }
