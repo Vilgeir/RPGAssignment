@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace RPGCharacters
 {
     
-    public class Weapons : Item
+    public class Weapon : Item
     {
+        //A list of all possible weapon types
         public enum WeaponTypes
         {
             Axe,
@@ -23,5 +24,13 @@ namespace RPGCharacters
 
         public WeaponTypes WeaponType { get; set; }
 
+        public bool GetItemType()
+        {
+            if(GetType() == typeof(Weapon)){
+                return true;
+            } else { 
+            }   return false;
+                
+        }
     }
 }
