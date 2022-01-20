@@ -2,11 +2,49 @@
 
 namespace RPGCharacters
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Mage newMage = new Mage()
+            {
+                Name = "Lux",
+                Attribute = new Attribute()
+                {
+                    Strength = 1,
+                    Dexterity = 1,
+                    Intelligence = 8,
+                },
+                Weapon = new Weapon()
+                {
+                    ItemName = "Wand",
+                    LevelToEquip = 1,
+                    WeaponType = Weapon.WeaponTypes.Wand,
+                    WeaponAttributes = new WeaponAttributes()
+                    {
+                        Damage = 10,
+                        AttackSpeed = 2,
+                    }
+                },
+                Armor = new Armor()
+                {
+                    ItemName = "Cloth",
+                    LevelToEquip = 1,
+                    ArmorType = Armor.ArmorTypes.Cloth,
+                    Attribute = new Attribute()
+                    {
+                        Strength = 2,
+                        Dexterity = 2,
+                        Intelligence = 12,
+                    }
+                }
+            };
+
+            newMage.CharacterChecks();
+            newMage.LevelUp();
+            newMage.ShowStats();
+
         }
     }
 }
