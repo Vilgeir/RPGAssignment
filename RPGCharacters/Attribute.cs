@@ -9,10 +9,8 @@ namespace RPGCharacters
     public class Attribute
     {
         //Character attributes
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Intelligence { get; set; }
-
-
+        public int Strength { get; set; } = 0;
+        public int Dexterity { get; set; } = 0;
+        public int Intelligence { get; set; } = 0;
     }
 }

@@ -8,7 +8,8 @@ namespace RPGCharacters
 {
     public class WeaponAttributes
     {
-        public int Damage { get; set; } = 0;
-        public int AttackSpeed { get; set; } = 0;
+        //All atributes for weapons
+        public double Damage { get; set; } = 0;
+        public double AttackSpeed { get; set; } = 0;
     }
 }

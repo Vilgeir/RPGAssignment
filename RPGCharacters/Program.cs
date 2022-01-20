@@ -10,19 +10,17 @@ namespace RPGCharacters
             Mage newMage = new Mage()
             {
                 Name = "Lux",
-                Level = 1,
                 Attribute = new Attribute()
                 {
                     Strength = 1,
                     Dexterity = 1,
                     Intelligence = 8,
                 },
-                Weapon = new Weapons()
+                Weapon = new Weapon()
                 {
-                    ItemName = "Staff",
+                    ItemName = "Wand",
                     LevelToEquip = 1,
-                    //ItemSlot = "staff",
-                    WeaponType = Weapons.WeaponTypes.Wand,
+                    WeaponType = Weapon.WeaponTypes.Wand,
                     WeaponAttributes = new WeaponAttributes()
                     {
                         Damage = 10,
@@ -33,19 +31,17 @@ namespace RPGCharacters
                 {
                     ItemName = "Cloth",
                     LevelToEquip = 1,
-                    //ItemSlot = ,
-                    ArmorType = Armor.ArmorTypes.Mail,
+                    ArmorType = Armor.ArmorTypes.Cloth,
                     Attribute = new Attribute()
                     {
                         Strength = 2,
                         Dexterity = 2,
-                        Intelligence = 2,
+                        Intelligence = 12,
                     }
                 }
             };
 
             newMage.CharacterChecks();
-            newMage.ShowStats();
             newMage.LevelUp();
             newMage.ShowStats();
 
