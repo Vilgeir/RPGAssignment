@@ -23,7 +23,7 @@ namespace RPGCharacters
                     WeaponType = Weapon.WeaponTypes.Wand,
                     WeaponAttributes = new WeaponAttributes()
                     {
-                        Damage = 10,
+                        Damage = 13,
                         AttackSpeed = 2,
                     }
                 },
@@ -36,7 +36,7 @@ namespace RPGCharacters
                     {
                         Strength = 2,
                         Dexterity = 2,
-                        Intelligence = 12,
+                        Intelligence = 3,
                     }
                 }
             };

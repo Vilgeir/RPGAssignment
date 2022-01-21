@@ -122,69 +122,6 @@ namespace RPGCharacters.Test
         }
 
         [Fact]
-        public void CalculateDamage_With_NoWeapon_Equipped()
-        {
-            //Arrange
-            Warrior warrior = new Warrior()
-            {
-                Name = "Test",
-                Level = 1,
-                Attribute = new Attribute()
-                {
-                    Strength = 5,
-                    Dexterity = 2,
-                    Intelligence = 1
-                },
-            };
-            double baseAttributes = warrior.Attribute.Strength + warrior.Attribute.Dexterity + warrior.Attribute.Intelligence;
-            double expected = 1 * (1 + (baseAttributes / 100));
-            //Act
-            double actual = warrior.CalculateTotalDamage();
-            //Assert
-            Assert.Equal(expected, actual);
-        }
-
-
-        [Fact]
-        public void CalculateDamage_With_OnlyValidWeapon_Equipped()
-        {
-            //Arrange
-            Warrior warrior = new Warrior()
-            {
-                Name = "Test",
-                Level = 1,
-                Attribute = new Attribute()
-                {
-                    Strength = 5,
-                    Dexterity = 2,
-                    Intelligence = 1
-                },
-                Weapon = new Weapon()
-                {
-                    ItemName = "Axe",
-                    LevelToEquip = 1,
-                    WeaponType = Weapon.WeaponTypes.Axe,
-                    WeaponAttributes = new WeaponAttributes()
-                    {
-                        Damage = 7,
-                        AttackSpeed = 1.1,
-                    }
-                },
-                Armor = new Armor()
-                {
-                    Attribute = new Attribute()
-                }
-            };
-            double baseAttributes = warrior.Attribute.Strength + warrior.Attribute.Dexterity + warrior.Attribute.Intelligence;
-            double weaponAttributes = warrior.Weapon.WeaponAttributes.Damage * warrior.Weapon.WeaponAttributes.AttackSpeed;
-            double expected = weaponAttributes * (1 + (baseAttributes / 100));
-            //Act
-            double actual = warrior.CalculateTotalDamage();
-            //Assert
-            Assert.Equal(expected, actual);
-        }
-
-        [Fact]
         public void CalculateDamage_With_ValidWeapon_And_ValidArmor_Equipped()
         {
             //Arrange
@@ -206,24 +143,24 @@ namespace RPGCharacters.Test
                     WeaponAttributes = new WeaponAttributes()
                     {
                         Damage = 7,
-                        AttackSpeed = 1.1,
+                        AttackSpeed = 1
                     }
                 },
                 Armor = new Armor()
                 {
-                    ItemName = "Cloth",
+                    ItemName = "Plate",
                     LevelToEquip = 1,
                     ArmorType = Armor.ArmorTypes.Plate,
                     Attribute = new Attribute()
                     {
-                        Strength = 4,
+                        Strength = 4
                     }
                 }
             };
             double baseAttributes = warrior.Attribute.Strength + warrior.Attribute.Dexterity + warrior.Attribute.Intelligence;
-            double weaponAttributes = warrior.Weapon.WeaponAttributes.Damage * warrior.Weapon.WeaponAttributes.AttackSpeed;
+            double weaponDamage = warrior.Weapon.WeaponAttributes.Damage * warrior.Weapon.WeaponAttributes.AttackSpeed;
             double armorAttributes = warrior.Armor.Attribute.Strength;
-            double expected = weaponAttributes * (1 + ((baseAttributes + armorAttributes) / 100));
+            double expected = weaponDamage * (1 + ((baseAttributes * armorAttributes) / 100));
             //Act
             double actual = warrior.CalculateTotalDamage();
             //Assert
