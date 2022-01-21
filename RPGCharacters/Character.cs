@@ -129,34 +129,37 @@ namespace RPGCharacters
         }        
 
         /// <summary>
-        /// This is supposed to calculate total damage for the character. At the moment it does not work as intended,
-        /// It only runs if weapon AND armor is selected
+        /// This is supposed to calculate total damage for the character. At the moment it does not work completely as intended,
+        /// It only runs if weapon AND armor is selected. Also is very messy.
         /// </summary>
         /// <returns>Total damage value</returns>
         public double CalculateTotalDamage()
         { 
             double totalBaseAttributes = Attribute.Strength + Attribute.Dexterity + Attribute.Intelligence;
+            double weaponDamage = 1;
+            double totalArmorAttributes = 1;
 
-            if (Weapon.GetType() == typeof(Weapon) && (Armor.GetType() == typeof(Armor)))
+            //Tried to find a way for it to check for wich type of object was present
+            if ((Weapon.GetType() == typeof(Weapon)) && (Armor.GetType() == typeof(Armor)))
             {
-                double weaponDamage = Weapon.WeaponAttributes.Damage * Weapon.WeaponAttributes.AttackSpeed;
-                double totalArmorAttributes = Armor.Attribute.Strength + Armor.Attribute.Dexterity + Armor.Attribute.Intelligence;
-                return weaponDamage * (1 + ((totalBaseAttributes + totalArmorAttributes) / 100));
-            } 
+                weaponDamage = Weapon.WeaponAttributes.Damage * Weapon.WeaponAttributes.AttackSpeed;
+                totalArmorAttributes = Armor.Attribute.Strength + Armor.Attribute.Dexterity + Armor.Attribute.Intelligence;
+            }
             else if (Weapon.GetType() == typeof(Weapon))
             {
-                double weaponDamage = Weapon.WeaponAttributes.Damage * Weapon.WeaponAttributes.AttackSpeed;
-                return weaponDamage * (1 + (totalBaseAttributes / 100));
+                weaponDamage = Weapon.WeaponAttributes.Damage * Weapon.WeaponAttributes.AttackSpeed;
             }
             else if (Armor.GetType() == typeof(Armor))
             {
-                double totalArmorAttributes = Armor.Attribute.Strength + Armor.Attribute.Dexterity + Armor.Attribute.Intelligence;
-                return 1 * (1 + ((totalBaseAttributes + totalArmorAttributes) / 100));
-            } 
+                totalArmorAttributes = Armor.Attribute.Strength + Armor.Attribute.Dexterity + Armor.Attribute.Intelligence;
+            }
             else
             {
-                return 1 * (1 + (totalBaseAttributes / 100));
+                return 0;
             }
+
+            //Calculation for total damage based on what attributes are selected
+            return weaponDamage * (1 + ((totalBaseAttributes * totalArmorAttributes) / 100)); 
         }
 
         /// <summary>
